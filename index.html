@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop App</title>
+    <link rel="stylesheet" href="output.css"> 
+    <script type="importmap">
+        {
+            "imports": {
+                "@supabase/supabase-js": "https://esm.sh/v135/@supabase/supabase-js@2.86.0/es2022/supabase-js.mjs"
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#0F0F0F] text-foreground min-h-screen overflow-x-hidden">
+    <nav class="relative z-20 mx-auto p-4 max-w-6xl flex justify-between items-center text-sm">
+        <div class="flex items-center space-x-2">
+                <img src="images/logo.png" alt="ACCSM Logo" class="h-6 w-6"/>
+            <span class="font-bold text-base">ACCSM</span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <button id="download-btn" class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-8 px-3 py-1"> 
+                Download
+            </button>
+            <a href="https://github.com" target="_blank" class="text-muted-foreground hover:text-primary transition-colors text-xs font-semibold">
+                GitHub
+            </a>
+        </div>
+
+    </nav>
+    
+    <div class="relative z-10 container mx-auto px-6 py-4 max-w-4xl">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                ACCSM
+            </h1>
+            <p class="text-sm md:text-base text-muted-foreground">Powerful tools at your fingertips</p>
+        </header>
+
+        <div id="slideshow-container" class="mb-8 p-0 overflow-hidden group">
+            <div class="relative aspect-video">
+                <div id="carousel-track" class="w-full h-full relative">
+                    <div id="placeholder-slide" class="carousel-item active w-full h-full flex items-center justify-center bg-card">
+                         <div class="text-center">
+                            <p class="text-muted-foreground mb-4">Loading Screenshots...</p>
+                         </div>
+                    </div>
+                </div>
+
+                <button id="prev-btn-icon" aria-label="Previous slide" class="cursor-pointer carousel-controls absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-secondary/30 text-foreground/80 hover:bg-secondary/50 rounded-lg transition-all opacity-0 group-hover:opacity-100 disabled:opacity-30 disabled:pointer-events-none z-30">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button id="next-btn-icon" aria-label="Next slide" class="cursor-pointer carousel-controls absolute right-0 top-1/2 -translate-y-1/2 p-2 bg-secondary/30 text-foreground/80 hover:bg-secondary/50 rounded-lg transition-all opacity-0 group-hover:opacity-100 disabled:opacity-30 disabled:pointer-events-none z-30">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="slide-content" class="text-center mb-6 fade-in">
+            <h2 class="text-xl md:text-2xl font-bold mb-1" id="slide-title">Feature Title</h2>
+            <p class="text-sm text-muted-foreground max-w-lg mx-auto" id="slide-description">Powerful tools at your fingertips</p>
+        </div>
+
+        <div id="slide-indicators" class="flex justify-center items-center gap-2 mb-8">
+            <button class="slide-indicator w-2 h-2 rounded-full bg-primary transition-colors"></button>
+            <button class="slide-indicator w-2 h-2 rounded-full bg-muted transition-colors"></button>
+            <button class="slide-indicator w-2 h-2 rounded-full bg-muted transition-colors"></button>
+        </div>
+
+        <div id="status-msg" class="text-center text-xs text-muted-foreground mt-4"></div>
+    </div>
+
+    <script type="module" src="slideshow.js"></script>
+</body>
+</html>
