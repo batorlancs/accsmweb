@@ -205,9 +205,9 @@ body {
   letter-spacing: var(--tracking-normal);
 }
 
-/* Cool animated gradient button with custom colors */
+/* Cool animated gradient button with teal colors */
 .animated-gradient-button {
-  background: linear-gradient(-45deg, #121212, #2A241C, #121212, #2A241C, #121212, #2A241C);
+  background: linear-gradient(-45deg, rgba(1, 92, 104, 0.6), rgba(1, 92, 104, 0.3), rgba(1, 92, 104, 0.8), rgba(1, 92, 104, 0.4), rgba(1, 92, 104, 0.7), rgba(1, 92, 104, 0.5));
   background-size: 400% 400%;
   animation: gradientShift 8s ease infinite;
   border: none;
@@ -221,7 +221,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(-45deg, #121212, #2A241C, #121212, #2A241C, #121212, #2A241C);
+  background: linear-gradient(-45deg, rgba(1, 92, 104, 0.6), rgba(1, 92, 104, 0.3), rgba(1, 92, 104, 0.8), rgba(1, 92, 104, 0.4), rgba(1, 92, 104, 0.7), rgba(1, 92, 104, 0.5));
   background-size: 400% 400%;
   animation: gradientShift 8s ease infinite;
   border-radius: inherit;
@@ -241,20 +241,19 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Pulse animation for extra coolness with custom colors */
+/* Pulse animation for extra coolness with teal colors */
 .animated-gradient-button {
   animation: gradientShift 8s ease infinite, pulse 4s ease-in-out infinite alternate;
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(18, 18, 18, 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(18, 18, 18, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(18, 18, 18, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(1, 92, 104, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(1, 92, 104, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(1, 92, 104, 0); }
 }
 
-/* Simplified navbar styling with only backdrop blur */
+/* Clean navbar styling without backdrop blur */
 nav {
-  backdrop-filter: blur(12px);
   position: relative;
 }
 
